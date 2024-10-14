@@ -1,0 +1,13 @@
+Language Fundamentals
+---------------------
+
+- Identifiers
+- Reserved Words
+- Data Types
+- Literals
+- Arrays
+- Types of Variables
+- var-arg Methods
+- main Method
+- command-line Arguments
+- Java Coding Standards

@@ -1,0 +1,51 @@
+Identifier:
+------------
+A name in Java program is called Identifier, which can be used for identification purpose. It can be method name, variable name, class name or label name.
+
+
+Rules for defining Java identifiers:
+------------------------------------
+* The only allowed characters in Java identifiers are 'a-z', 'A-Z', '0-9', '$', '_'. If we are using any other character then we will get compile-time error. As example, 'total_number' is a valid Java identifier, but 'total#' is invalid.
+
+* Identifiers can not start with digits. As example, 'total123' is a valid Java identifier, but '123total' is invalid.
+
+* Java identifiers are case-sensitive, ofcourse Java language itself is treated as a case-sensitive programming language. As example, 'number', 'Number' and 'NUMBER' are three different identifiers in Java.
+
+* There is no length limit for Java identifiers. But, it is not recommended to take too lengthy identifiers.
+
+* We can not use reserved-words as identifiers. As exmaple, using 'if' as an identifier is not allowed in Java.
+
+* All pre-defined Java class names and Interface names we can use as identifiers. As example, 'String' and 'Runnable' are valid Java identifiers. Even though it is valid, but it is not a good programming practice, because it reduces redability and creates confusion.
+
+Reserved Words:
+---------------
+In Java some words are reserved to represent some meaning or functionality. Such type of words are called reserved words.
+
+There are a total of 53 reserved words in Java as listed below,
+* Reserved Literals (3) - 'true', 'false', 'null'
+* Unused Keywords (2) - 'const', 'goto'
+* Keywords for Data-Types (8) - 'byte', 'short', 'int', 'long', 'float', 'double', 'boolean', 'char'
+* Keywords for Flow-Control (11) - 'if', 'else', 'switch', 'case', 'default', 'while', 'do', 'for', 'break', 'continue', 'return'
+* Keywords for Mo0difiers (11) - 'public', 'private', 'protected', 'static', 'final', 'abstract', 'synchronized', 'native', 'strictfp', 'transient', 'volatile'
+* Keywords for Exception-Handling (6) - 'try', 'catch', 'finally', 'throw', 'throws', 'assert'
+* Class related Keywords (6) - 'class', 'interface', 'extends', 'implements', 'package', 'import'
+* Object related Keyword (4) - 'new', 'instanceof', 'super', 'this'
+* Return-Type Keyword (1) - 'void'
+* ENUM Keyword (1) - 'enum'
+
+--> 'goto': Usage of the keyword 'goto' created several problems in old languages. Hence, SUN people banned this keyword in Java.
+
+--> 'const': Use the keyword 'final' instead of 'const' in Java.
+
+--> 'enum': We can use 'enum' to define a group of named constants in Java.
+
+In Java return-type is mandatory, if a method won't return anything, then we have to declare that method with the return-type 'void'. But in C language return-type is optional and the default return-type is 'int'.
+
+'goto' and 'const' are unused keywords in Java, and if we are trying to use then we will get compile-time error.
+
+Conclusions:
+------------
+* All 53 reserved-words in Java contains only lower-case alphabet symbols.
+* In Java we have only 'new' keyword, and there is no 'delete' keyword. Because, destruction of the useless objects is the responsibility of the garbage collector.
+* The following are newly introduced keywords in Java, strictfp (1.2v), assert (1.4v), enum (1.5v)
+* 
