@@ -2,20 +2,16 @@ Identifier:
 ------------
 A name in Java program is called Identifier, which can be used for identification purpose. It can be method name, variable name, class name or label name.
 
-
 Rules for defining Java identifiers:
 ------------------------------------
 * The only allowed characters in Java identifiers are 'a-z', 'A-Z', '0-9', '$', '_'. If we are using any other character then we will get compile-time error. As example, 'total_number' is a valid Java identifier, but 'total#' is invalid.
-
 * Identifiers can not start with digits. As example, 'total123' is a valid Java identifier, but '123total' is invalid.
-
-* Java identifiers are case-sensitive, ofcourse Java language itself is treated as a case-sensitive programming language. As example, 'number', 'Number' and 'NUMBER' are three different identifiers in Java.
-
+* Java identifiers are case-sensitive, of course Java language itself is treated as a case-sensitive programming language. As example, 'number', 'Number' and 'NUMBER' are three different identifiers in Java.
 * There is no length limit for Java identifiers. But, it is not recommended to take too lengthy identifiers.
+* We can not use reserved-words as identifiers. As example, using 'if' as an identifier is not allowed in Java.
+* All pre-defined Java class names and Interface names we can use as identifiers. As example, 'String' and 'Runnable' are valid Java identifiers. Even though it is valid, but it is not a good programming practice, because it reduces readability and creates confusion.
 
-* We can not use reserved-words as identifiers. As exmaple, using 'if' as an identifier is not allowed in Java.
 
-* All pre-defined Java class names and Interface names we can use as identifiers. As example, 'String' and 'Runnable' are valid Java identifiers. Even though it is valid, but it is not a good programming practice, because it reduces redability and creates confusion.
 
 Reserved Words:
 ---------------
@@ -26,7 +22,7 @@ There are a total of 53 reserved words in Java as listed below,
 * Unused Keywords (2) - 'const', 'goto'
 * Keywords for Data-Types (8) - 'byte', 'short', 'int', 'long', 'float', 'double', 'boolean', 'char'
 * Keywords for Flow-Control (11) - 'if', 'else', 'switch', 'case', 'default', 'while', 'do', 'for', 'break', 'continue', 'return'
-* Keywords for Mo0difiers (11) - 'public', 'private', 'protected', 'static', 'final', 'abstract', 'synchronized', 'native', 'strictfp', 'transient', 'volatile'
+* Keywords for Modifiers (11) - 'public', 'private', 'protected', 'static', 'final', 'abstract', 'synchronized', 'native', 'strictfp', 'transient', 'volatile'
 * Keywords for Exception-Handling (6) - 'try', 'catch', 'finally', 'throw', 'throws', 'assert'
 * Class related Keywords (6) - 'class', 'interface', 'extends', 'implements', 'package', 'import'
 * Object related Keyword (4) - 'new', 'instanceof', 'super', 'this'
@@ -34,9 +30,7 @@ There are a total of 53 reserved words in Java as listed below,
 * ENUM Keyword (1) - 'enum'
 
 --> 'goto': Usage of the keyword 'goto' created several problems in old languages. Hence, SUN people banned this keyword in Java.
-
 --> 'const': Use the keyword 'final' instead of 'const' in Java.
-
 --> 'enum': We can use 'enum' to define a group of named constants in Java.
 
 In Java return-type is mandatory, if a method won't return anything, then we have to declare that method with the return-type 'void'. But in C language return-type is optional and the default return-type is 'int'.
@@ -48,4 +42,46 @@ Conclusions:
 * All 53 reserved-words in Java contains only lower-case alphabet symbols.
 * In Java we have only 'new' keyword, and there is no 'delete' keyword. Because, destruction of the useless objects is the responsibility of the garbage collector.
 * The following are newly introduced keywords in Java, strictfp (1.2v), assert (1.4v), enum (1.5v)
-* 
+
+
+
+Data-Types:
+-----------
+In Java every variable and every expression has some type. Each and every data-type is clearly defined, every assignment should be checked by compiler for type compatibility. Because of above reasons we can conclude, Java language is Strongly-Typed Programming Language.
+
+--> Java is not considered as pure Object-Oriented Programming Language, because several OOPs features are not satisfied by Java (like operator-overloading, multiple-inheritance, etc.). Moreover we are depending on primitive data-types, which are non-objects.
+
+* Below is the different type of data-types available in Java,
+
+
+                                                    |- Integral Data-Type: 'byte', 'short', 'int', 'long'
+                                                    |
+                            |- Numeric Data-Type ----
+                            |                       |
+                            |                       |- Floating Point Data-Type: 'float', 'double'
+Primitive Data-Types (8) ----
+                            |
+                            |
+                            |- Non-Numeric Data-Type: 'char', 'boolean'
+
+
+* Except 'boolean' and 'char' the remaining data-types are considered as Signed Data-Types, because we can represent both positive and negative numbers.
+
+* Byte Data-Type:
+--> Size: 1 byte (8 bits)
+--> Max Value: +127
+--> Min Value: -128
+-> The Most Significant Bit (MSB) acts as the sign-bit, where 0 means positive number and 1 means negative number. Positive numbers will be represented directly in the memory, whereas negative numbers will be represented in 2's complement form.
+
+* Short Data-Type:
+--> Size: 2 bytes (16 bits)
+--> Max Value: (2^15)-1 [32767]
+--> Min Value: -2^15 [-32768]
+--> This is the most rarely used data-type in Java.
+--> Short data-type is best suitable for 16-bit processors like 8085, but these processors are completely outdated and hence corresponding short data-type is also outdated data-type.
+
+* Integer Data-Type:
+--> Size: 4 bytes (32 bits)
+--> Max Value: (2^31)-1 [2147483647]
+--> Min Value: -2^31 [-2147483648]
+--> The most commonly used data-type in Java is 'int'.
