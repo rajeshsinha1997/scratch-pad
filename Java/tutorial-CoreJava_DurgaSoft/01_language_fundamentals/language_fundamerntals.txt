@@ -124,3 +124,42 @@ Primitive Data-Types (8) ----
 
 
 * 'null' is the default value for object reference, and we can't apply for primitives. If we are trying to use for primitives, then we will get compile-time error.
+
+
+
+Literals:
+---------
+* A constant value, which can be assigned to the variable is called a literal. As example, 'int x = 10', here the value '10' is a constant value or literal.
+
+
+* Integral Literals:
+--------------------
+--> For integral data-types ('byte', 'short', 'int', 'long'), we can specify literal value in the following ways,
+    * Decimal Form (base 10): Allowed digits are 0-9.
+    * Octal Form (base 8): Allowed digits are 0-7. Literal value should be prefixed with '0'
+    * Hexadecimal Form (base 16): Allowed digits are 0-9, A-F. For extra digits (A-F) we can use both lower case and upper case characters, this is one of very few areas where Java is not case-sensitive. The literal value should be prefixed with '0x' or '0X'.
+    These are only possible ways to specify literal value for integral data-types.
+
+--> By default every integral literal is of type 'int', but we can also specify integral literal explicitly as 'long' type by suffixing it with 'l' or 'L'.
+
+--> There is no direct way to specify 'byte' and 'short' literal explicitly, but indirectly we can specify. Whenever we are assigning integral literal to the 'byte' variable, and if the value is within the range of 'byte', then compiler treats it automatically as 'byte' literal. Similarly same for the 'short' literal also.
+
+
+* Floating-Point Literals:
+--------------------------
+--> By default, every floating-point literal is of 'double' type, and hence we can't assign directly to the 'float' variable. But, we can specify floating-point literal as 'float' type by suffixing it with 'f' or 'F'.
+
+--> We can specify explicitly floating-point literal as 'double' type by suffixing it with 'd' or 'D'. Of course this convention is not required.
+
+--> We can specify floating-point literals only in 'decimal' form, and we can't specify in 'octal' and 'hexadecimal' forms.
+
+--> We can assign integral literal directly to floating-point variables and that integral literal can be specified either in 'decimal', 'octal' or 'hexadecimal' forms.
+
+--> We can't assign floating-point literals to integral types.
+
+--> We can specify floating-point literal even in exponential form (scientific notation).
+
+
+* Boolean Literals:
+-------------------
+--> The only allowed values for 'boolean' data-types are 'true' or 'false'.
