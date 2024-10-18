@@ -1,6 +1,8 @@
 public class Identifier_01 {
     public static void main(String[] args) {
         int x = 10;
+
+        System.out.println("Integer Value: " + x);
     }
 }
 
