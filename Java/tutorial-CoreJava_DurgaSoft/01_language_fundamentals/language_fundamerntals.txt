@@ -163,3 +163,30 @@ Literals:
 * Boolean Literals:
 -------------------
 --> The only allowed values for 'boolean' data-types are 'true' or 'false'.
+
+
+* Character Literals:
+---------------------
+--> We can specify 'char' literals as a single character within single quotes. As example, "char ch = 'a'"
+
+--> We can specify 'char' literal as an integral literal, which represents unicode value of the corresponding character, and that integral literal can be specified either in 'decimal', 'octal' or 'hexadecimal' forms, but, the allowed range is 0-65535.
+
+--> We can represent 'char' literal in unicode representation also, which is nothing but '\uXXXX' where the 'XXXX' is the corresponding 4 digit hexadecimal number of the character.
+
+--> Every escape character is a valid 'char' literal.
+
+
+* String Literals:
+------------------
+--> Any sequence of characters within double quotes is treated as String literal.
+
+
+* v1.7 Enhancements w.r.t Literals:
+-----------------------------------
+--> Binary Literals: For integral data-types, until 1.6v we can specify literal value in the following ways,
+                     * Decimal Form
+                     * Octal Form
+                     * Hexadecimal Form
+                     But, from v1.7 onwards we can specify literal value even in binary  form also. Allowed digits are '0' and '1'. Literal value should be prefixed with '0b' or '0B'.
+
+--> Usage of '_' Symbol in Numeric Literals: From v1.7 onwards, we can use '_' symbol between digits of numeric literals.
