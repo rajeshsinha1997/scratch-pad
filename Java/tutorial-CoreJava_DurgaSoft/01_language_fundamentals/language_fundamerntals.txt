@@ -189,4 +189,47 @@ Literals:
                      * Hexadecimal Form
                      But, from v1.7 onwards we can specify literal value even in binary  form also. Allowed digits are '0' and '1'. Literal value should be prefixed with '0b' or '0B'.
 
---> Usage of '_' Symbol in Numeric Literals: From v1.7 onwards, we can use '_' symbol between digits of numeric literals.
+--> Usage of '_' Symbol in Numeric Literals: From v1.7 onwards, we can use '_' symbol between digits of numeric literals. The main advantage of this approach is, readability of the code will be improved. At the time of compilation, these '_' symbols will be removed automatically. We can use more than one '_' symbol also within the digits. We can use '_' symbol only between the digits, if we are using anywhere else, we will get compile-time error.
+
+
+                                byte --> short --> int --> long --> float --> double
+                                                    ^
+                                                    |
+                                                    |
+                                                   char
+
+
+--> 8 byte 'long' value we can assign to 4 byte 'float' variable, because both are following different memory representations internally.
+
+
+
+Arrays:
+-------
+
+* Introduction:
+---------------
+--> An array is an indexed collection of fixed number of homogeneous data elements. The main advantage of an array is, we can represent a large number of values by using a single variable, so that the readability of the code will be improved. But, the main disadvantage of an array is, it is fixed in size, that means once we create an array there is no chance of increasing or decreasing the size based on our requirements. Hence to use arrays, compulsory we should know the size in advance, which may not be possible always.
+
+
+* Array Declaration:
+--------------------
+--> At the time of declaration, we can't specify the size, otherwise we will get compile-time error.
+
+--> If we want to specify dimension before the variable name, that facility is applicable only for the first variable in an array declaration. If we are trying to apply for the remaining variables, we will get compile-time error.
+
+
+* Array Creation:
+-----------------
+--> Every array in Java is an object only. Hence, we can create arrays by using the 'new' operator.
+
+--> For every array type, the corresponding classes are available and these classes are part of the Java language, and not available to the programmer level.
+
+--> At the time of array creation, compulsory we should specify the size. Otherwise, we will get compile time error.
+
+--> It is legal to have an array with size 0 in Java.
+
+--> If we are trying to specify an array with the size as some negative integer value, then we will get a runtime exception saying 'NegativeArraySizeException'.
+
+--> To specify the size of an array, the allowed data-types are 'byte', 'short', 'char' and 'int'. If we are trying to specify the size of an array with any other data-type, then we will get compile-time error.
+
+--> The maximum allowed array size in Java is '2147483647', which is the maximum value of the 'integer' data-type.
