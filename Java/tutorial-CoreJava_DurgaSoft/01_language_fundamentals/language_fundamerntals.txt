@@ -233,3 +233,53 @@ Arrays:
 --> To specify the size of an array, the allowed data-types are 'byte', 'short', 'char' and 'int'. If we are trying to specify the size of an array with any other data-type, then we will get compile-time error.
 
 --> The maximum allowed array size in Java is '2147483647', which is the maximum value of the 'integer' data-type.
+
+--> In Java, 2D arrays are not implemented by using 'Matrix' style. SUN people followed 'Array of Arrays' approach for multi-dimensional array creation. The main advantage of this approach is that the memory utilization will be improved.
+
+--> Once we create an array, every array element by default initialized with default values.
+
+--> Once we create an array, every array element by default is initialized with the corresponding default values. If we are not satisfied with the default values, then we can override these values with our customized values.
+
+--> If we are trying to access any array element with out of range index (either positive or negative integer value), then we will get runtime exception saying 'ArrayIndexOutOfBoundsException'.
+
+
+* Array Declaration, Creation & Initialization in a Single Line:
+----------------------------------------------------------------
+--> We can declare, create and initialize an array in a single line (shorter representation). We can use this shortcut even for multi-dimensional arrays also. If we want to use this shortcut, compulsory we should perform all activities in a single line. If we are trying to divide it into multiple lines, then we will get compile time error.
+
+
+* length vs length():
+---------------------
+--> length: 'length' is a 'final' variable applicable for arrays. this variable represents the size of the array.
+
+--> length(): 'length()' method is a final method applicable for String objects. This method returns the number of characters present in a String object.
+
+--> 'length' variable applicable for arrays but not for String objects, where as 'length()' method applicable for String objects but not for arrays.
+
+--> In case of multi-dimensional arrays, 'length' variable represents only base size but not total size.
+
+--> There is no direct way to specify the total length of a multi-dimensional array. But indirectly we can find by performing a sum of the lengths of every next level arrays.
+
+
+
+* Anonymous Arrays:
+-------------------
+--> Sometimes we can declare an array without a name, such type of nameless arrays are called 'Anonymous Arrays'. The main purpose of anonymous arrays are to be used just for the current instance (one-time usage).
+
+--> We can create anonymous array as follows: new int[]{10, 20, 30, 40}
+
+--> While creating anonymous arrays, we can't specify the size. Otherwise, we will get compile-time error.
+
+--> We can create multi-dimensional anonymous arrays also as follows: new int[][]{{10, 20}, {30, 40}}
+
+--> Based on our requirement, we can give the name for anonymous array, then it is no longer anonymous.
+
+
+
+* Array Element Assignments:
+----------------------------
+--> Case 1: In the case of primitive type arrays, as array elements we can provide any type, which can be implicitly promoted to the declared type. As example, in the case of a 'float' type array the allowed data-types are 'byte', 'short', 'char', 'int', 'long' and 'float'.
+
+--> Case 2: In the case of object-type arrays, as array elements we can provide either declared type objects or it's child class objects.
+
+--> Case 3: For 'Interface' type arrays as array elements, its implementation class objects are allowed.
