@@ -261,7 +261,6 @@ Arrays:
 --> There is no direct way to specify the total length of a multi-dimensional array. But indirectly we can find by performing a sum of the lengths of every next level arrays.
 
 
-
 * Anonymous Arrays:
 -------------------
 --> Sometimes we can declare an array without a name, such type of nameless arrays are called 'Anonymous Arrays'. The main purpose of anonymous arrays are to be used just for the current instance (one-time usage).
@@ -275,7 +274,6 @@ Arrays:
 --> Based on our requirement, we can give the name for anonymous array, then it is no longer anonymous.
 
 
-
 * Array Element Assignments:
 ----------------------------
 --> Case 1: In the case of primitive type arrays, as array elements we can provide any type, which can be implicitly promoted to the declared type. As example, in the case of a 'float' type array the allowed data-types are 'byte', 'short', 'char', 'int', 'long' and 'float'.
@@ -283,3 +281,12 @@ Arrays:
 --> Case 2: In the case of object-type arrays, as array elements we can provide either declared type objects or it's child class objects.
 
 --> Case 3: For 'Interface' type arrays as array elements, its implementation class objects are allowed.
+
+
+* Array Variable Assignments:
+-----------------------------
+--> Case 1: Element level promotions are not applicable at array level. As example, 'char' element can be promoted to 'int' type, but 'char[]' can not be promoted to 'int[]'. Also, in the case of Object type arrays, child class type array can be promoted to parent class type array.
+
+--> Case 2: Whenever we are assigning one array to another array, internal elements won't be copied, just the reference variables will be re-assigned.
+
+--> Case 3: Whenever we are assigning one array to another array, the dimensions must be matched. As example, in the place of 1D 'int' array we should provide another 1D array only. If we are trying to provide any other dimension, then we will get compile-time error. Whenever we are assigning one array to another array, both dimensions and types must be matched, but sizes are not required to match.
