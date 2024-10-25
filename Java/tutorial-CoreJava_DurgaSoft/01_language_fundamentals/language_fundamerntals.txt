@@ -290,3 +290,65 @@ Arrays:
 --> Case 2: Whenever we are assigning one array to another array, internal elements won't be copied, just the reference variables will be re-assigned.
 
 --> Case 3: Whenever we are assigning one array to another array, the dimensions must be matched. As example, in the place of 1D 'int' array we should provide another 1D array only. If we are trying to provide any other dimension, then we will get compile-time error. Whenever we are assigning one array to another array, both dimensions and types must be matched, but sizes are not required to match.
+
+
+
+Types of Variables:
+---------------------
+
+--> Based on the type of value represented by a variable, all variables are divided into 2 types,
+    
+    * Primitive Variables: These type of variables can be used to represent primitive values. As example,
+
+                                        int x = 10;
+    
+    * Reference variables: These type of variables can be used to refer objects. As example,
+    
+                                    Student s = new Student;
+
+
+--> Based on the position of declaration and behavior, all variables are divided into 3 types,
+
+    1. Instance Variable
+    2. Static Variable
+    3. Local Variable
+
+
+
+* Instance Variable:
+--------------------
+--> If the value of a variable is varied from object to object, then such type of variables are known as Instance variables. For every object a separate copy of instance variables will be created.
+
+--> Instance variables should be declared within the class directly, but outside of any method, block or constructor.
+
+--> Instance variables will be created at the time of the object creation, and will be destroyed at the time of the object destruction. Hence, the scope of an instance variable is same as the scope of the object.
+
+--> Instance variables will be stored in the 'Heap' memory as a part of object.
+
+--> We can't access instance variables directly from static area, but we can access by using object reference. But, we can access instance variable directly from instance area.
+
+--> For instance variables, JVM will always provide default values, and we are not required to perform initialization explicitly.
+
+--> Instance variables are also known as 'Object-Level Variables' or 'Attributes'.
+
+
+
+* Static Variables:
+-------------------
+--> If the value of a variable is not varied from object to object, then it is not recommended to declare that variable as an instance variable. We should declare such type of variables at class level by using the 'static' modifier.
+
+--> In the case of instance variables, for every object a separate copy will be created, but in the case of static variables a single copy will be created at class level, and it will be shared among every object of the class.
+
+--> Static variables should be declared within the class directly but outside of any method or block or constructor.
+
+--> Static variables will be created at the time of class loading, and destroyed at the time of class un-loading. Hence, scope of a static variable is exactly same as the scope of the .class file.
+
+--> Static variables will be stored in the 'method' memory area.
+
+--> We can access static variables either by object reference or by class name. But recommended way to access static variables is by using class name. Also, within the same class it is not required to use class name and we can access static variables directly.
+
+--> We can access static variables directly from both instance and static areas.
+
+--> For static variables, JVM will provide default values and we are not required to perform initialization explicitly.
+
+--> Static variables are also known as 'Class Level Variables' or 'Fields'.
