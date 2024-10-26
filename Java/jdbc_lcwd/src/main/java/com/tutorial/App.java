@@ -8,6 +8,7 @@ import com.tutorial.practice.PostgresJDBC;
  */
 public class App {
     public static void main(String[] args) {
-        PostgresJDBC.connectToPostgres();
+        // run postgres database operation
+        PostgresJDBC.runPostgresJDBC();
     }
 }

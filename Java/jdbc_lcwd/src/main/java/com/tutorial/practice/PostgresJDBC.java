@@ -10,7 +10,28 @@ public class PostgresJDBC {
     private static final String DATABASE_USER = "postgres";
     private static final String DATABASE_PASSWORD = "password";
 
-    public static void connectToPostgres() {
+    // database connection object
+    private static Connection databaseConnection;
+
+    /*
+     * method to check if the postgres database is connected
+     * 
+     * @return true if the database is connected, false otherwise
+     */
+    private static boolean isDatabaseConnected() {
+        try {
+            // check if the database connection is not closed
+            return PostgresJDBC.databaseConnection != null && !PostgresJDBC.databaseConnection.isClosed();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    /*
+     * method to connect to the postgres database using JDBC
+     */
+    private static void connectToDatabase() {
         try {
             /*
              * Applications do not need to explicitly load the org.postgresql.Driver class
@@ -24,21 +45,61 @@ public class PostgresJDBC {
             // 1. load database driver
             // Class.forName("org.postgresql.Driver"); --> this step is not necessary now
 
-            // 2. create a connection
-            Connection databaseConnection = DriverManager.getConnection(DATABASE_URL, DATABASE_USER, DATABASE_PASSWORD);
-
-            // check if connection is established
-            if (databaseConnection.isClosed()) {
-                System.err.println("DATABASE CONNECTION IS CLOSED");
-            } else {
-                System.out.println("DATABASE CONNECTION IS ESTABLISHED");
+            // check if the connection is not established already
+            if (!PostgresJDBC.isDatabaseConnected()) {
+                // 2. create a connection
+                PostgresJDBC.databaseConnection = DriverManager.getConnection(DATABASE_URL, DATABASE_USER,
+                        DATABASE_PASSWORD);
             }
-
-            // 6. close database connection
-            databaseConnection.close();
-
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+
+    /*
+     * method to close the existing postgres database connection
+     */
+    private static void closeDatabaseConnection() {
+        try {
+            // check if the database is connected
+            if (PostgresJDBC.isDatabaseConnected()) {
+                // close database connection
+                PostgresJDBC.databaseConnection.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /*
+     * method to run postgres database operations
+     */
+    public static void runPostgresJDBC() {
+        // check if the database is connected
+        if (PostgresJDBC.isDatabaseConnected()) {
+            System.out.println("Database is Connected");
+        } else {
+            System.out.println("Database is not Connected");
+        }
+
+        // connect to the database
+        PostgresJDBC.connectToDatabase();
+
+        // check if the database is connected
+        if (PostgresJDBC.isDatabaseConnected()) {
+            System.out.println("Database is Connected");
+        } else {
+            System.out.println("Database is not Connected");
+        }
+
+        // close database connection
+        PostgresJDBC.closeDatabaseConnection();
+
+        // check if the database is connected
+        if (PostgresJDBC.isDatabaseConnected()) {
+            System.out.println("Database is Connected");
+        } else {
+            System.out.println("Database is not Connected");
         }
     }
 }
