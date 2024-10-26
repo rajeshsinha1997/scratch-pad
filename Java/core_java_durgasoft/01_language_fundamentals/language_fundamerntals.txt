@@ -364,3 +364,33 @@ Types of Variables:
 --> Local variables will be created while executing the block in which we have declared it. Once the corresponding block execution is complete automatically also the local variables will be destroyed. Hence, the scope of a local variable is the block in which we have declared it.
 
 --> For local variable JVM won't provide default values, and compulsory we should perform initialization explicitly before using that variable, i.e. if we are not using the local variable then it is not required to perform initialization.
+
+--> It is not recommended to perform initialization for local variables inside logical blocks, because there is no assurance of execution of these blocks always at run-time.
+
+--> It is highly recommended to perform initialization for local variables at the time of declaration at least with default values.
+
+--> The only applicable modifier for local variables are 'final'. By mistake if we are trying to apply any other modifier, then we will get compile-time error.
+
+--> In Java if we are not declaring a variable with any modifier, then by default the 'default' modifier is applied to that variable. But this rule is applicable only for 'Instance' and 'Static' variables but not for 'Local' variables.
+
+
+
+* Conclusions:
+--------------
+--> For 'Instance' and 'Static' variables JVM will provide default values and we are not required to perform initialization explicitly. But for 'Local' variables JVM won't provide default values and compulsory we should perform initialization explicitly before using that variable.
+
+--> 'Instance' and 'Static' variables can be accessed by multiple threads simultaneously, and hence they are not 'Thread-Safe'. But in the case of 'Local' variables for every thread a separate copy will be created, and hence 'Local' variables are 'Thread-Safe'.
+
+--> Every variable in Java should be either 'Instance' or 'Static' or 'Local'. Along with that, every variable in Java should be either 'Primitive' or 'Reference'. Hence, various possible combinations of variables in Java are,
+    * Instance-Primitive
+    * Instance-Reference
+    * Static-Primitive
+    * Static-Reference
+    * Local-Primitive
+    * Local-Reference
+
+
+
+* Un-Initialized Arrays:
+------------------------
+--> Once we create an array, every array element is by default initialized with default values, irrespective of whether it is an 'Instance' or 'Static' or 'Local' array.
