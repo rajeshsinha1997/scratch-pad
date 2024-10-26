@@ -352,3 +352,15 @@ Types of Variables:
 --> For static variables, JVM will provide default values and we are not required to perform initialization explicitly.
 
 --> Static variables are also known as 'Class Level Variables' or 'Fields'.
+
+
+
+* Local Variables:
+------------------
+--> Sometimes to meet temporary requirements of the programmer, we can declare variables inside a method or block or constructor. Such type of variables are called 'Local Variables' or 'Temporary Variables' or 'Stack Variables' or 'Automatic Variables'.
+
+--> Local variables will be stored inside the 'stack' memory area.
+
+--> Local variables will be created while executing the block in which we have declared it. Once the corresponding block execution is complete automatically also the local variables will be destroyed. Hence, the scope of a local variable is the block in which we have declared it.
+
+--> For local variable JVM won't provide default values, and compulsory we should perform initialization explicitly before using that variable, i.e. if we are not using the local variable then it is not required to perform initialization.
