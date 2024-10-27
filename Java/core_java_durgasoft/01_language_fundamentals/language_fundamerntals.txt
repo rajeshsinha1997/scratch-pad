@@ -314,7 +314,6 @@ Types of Variables:
     3. Local Variable
 
 
-
 * Instance Variable:
 --------------------
 --> If the value of a variable is varied from object to object, then such type of variables are known as Instance variables. For every object a separate copy of instance variables will be created.
@@ -330,7 +329,6 @@ Types of Variables:
 --> For instance variables, JVM will always provide default values, and we are not required to perform initialization explicitly.
 
 --> Instance variables are also known as 'Object-Level Variables' or 'Attributes'.
-
 
 
 * Static Variables:
@@ -354,7 +352,6 @@ Types of Variables:
 --> Static variables are also known as 'Class Level Variables' or 'Fields'.
 
 
-
 * Local Variables:
 ------------------
 --> Sometimes to meet temporary requirements of the programmer, we can declare variables inside a method or block or constructor. Such type of variables are called 'Local Variables' or 'Temporary Variables' or 'Stack Variables' or 'Automatic Variables'.
@@ -374,7 +371,6 @@ Types of Variables:
 --> In Java if we are not declaring a variable with any modifier, then by default the 'default' modifier is applied to that variable. But this rule is applicable only for 'Instance' and 'Static' variables but not for 'Local' variables.
 
 
-
 * Conclusions:
 --------------
 --> For 'Instance' and 'Static' variables JVM will provide default values and we are not required to perform initialization explicitly. But for 'Local' variables JVM won't provide default values and compulsory we should perform initialization explicitly before using that variable.
@@ -390,7 +386,39 @@ Types of Variables:
     * Local-Reference
 
 
-
 * Un-Initialized Arrays:
 ------------------------
 --> Once we create an array, every array element is by default initialized with default values, irrespective of whether it is an 'Instance' or 'Static' or 'Local' array.
+
+
+
+* var-arg (Variable Number of Arguments) Methods:
+-------------------------------------------------
+--> Until v1.4 of Java, we can't declare a method with variable number of arguments. If there is a change in number of arguments, compulsory we should go for a new method. It increases the length of the code and reduces readability. To overcome this problem, SUN people introduced 'var-arg' methods in v1.5 of Java. According to this, we can declare a method which can take variable number of arguments. Such type of methods are called 'var-arg' methods.
+
+--> We can declare a 'var-arg' method as follows,
+
+                    <method_name>(<data_type_of_parameter>... <parameter_name>)
+    
+    We can call this method by passing any number of arguments of matching data-type, including 0 number of arguments as well.
+
+--> Internally 'var-arg' parameters will be converted into a 1D array. Hence, within the 'var-arg' method we can differentiate values by using the corresponding indices.
+
+--> We can mix 'var-arg' parameters with normal parameters also. But in such cases, 'var-arg' parameters should be the last parameter.
+
+--> Inside 'var-arg' method we can take only one 'var-arg' parameter, and if we take more than one 'var-arg' parameter we will get compile-time error.
+
+--> Inside a class, we can't declare 'var-arg' method and corresponding 1D array method simultaneously. Otherwise, we will get compile-time error.
+
+--> In general, 'var-arg' method will get the least priority, that means if no other method matches, then only the 'var-arg' method will get the chance. It is exactly same as the 'default' case inside a 'Switch' statement.
+
+--> Equivalence Between 'var-arg' Parameter and 1D Array:
+    -----------------------------------------------------
+    * Case 1: Wherever 1D array is present, we can replace it with 'var-arg' parameter.
+
+                    someMethod(int[] parameters) == someMethod(int... parameters)
+                             main(String[] args) == main(String... args)
+    
+    * Case 2: Wherever 'var-arg' parameter is present, we can't replace it with 1D array.
+
+                    someMethod(int... parameters) != someMethod(int[] parameters)
