@@ -3,6 +3,7 @@ package com.tutorial.practice;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class PostgresJDBC {
     // database configuration values
@@ -57,6 +58,60 @@ public class PostgresJDBC {
     }
 
     /*
+     * method to create a table in the postgres database using JDBC
+     */
+    private static void createDatabaseTable() {
+        try {
+            // connect to the database
+            PostgresJDBC.connectToDatabase();
+
+            // generate create table query
+            final String createTableQuery = "CREATE TABLE public.jdbc (j_id int GENERATED ALWAYS AS IDENTITY NOT NULL, j_name varchar NOT NULL, CONSTRAINT jdbc_pk PRIMARY KEY (j_id))";
+
+            // create statement
+            Statement createTableStatement = PostgresJDBC.databaseConnection.createStatement();
+
+            // execute statement
+            createTableStatement.executeUpdate(createTableQuery);
+
+            System.out.println("Table Created in the Database Successfully");
+        } catch (SQLException e) {
+            System.out.println("Table not Created in the Database");
+            e.printStackTrace();
+        } finally {
+            // close database connection in case of any exception occurs
+            PostgresJDBC.closeDatabaseConnection();
+        }
+    }
+
+    /*
+     * method to drop a table using JDBC
+     */
+    private static void dropDatabaseTable() {
+        try {
+            // connect to the database
+            PostgresJDBC.connectToDatabase();
+
+            // generate drop table query
+            final String dropTableQuery = "DROP TABLE public.jdbc;";
+
+            // create statement
+            Statement dropTableStatement = PostgresJDBC.databaseConnection.createStatement();
+
+            // execute statement
+            dropTableStatement.executeUpdate(dropTableQuery);
+
+            System.out.println("Table Dropped from the Database Successfully");
+        } catch (SQLException e) {
+            System.out.println("Table Dropped Failed");
+            e.printStackTrace();
+        } finally {
+            // close database connection in case of any exception occurs
+            PostgresJDBC.closeDatabaseConnection();
+        }
+    }
+
+    /*
      * method to close the existing postgres database connection
      */
     private static void closeDatabaseConnection() {
@@ -75,31 +130,10 @@ public class PostgresJDBC {
      * method to run postgres database operations
      */
     public static void runPostgresJDBC() {
-        // check if the database is connected
-        if (PostgresJDBC.isDatabaseConnected()) {
-            System.out.println("Database is Connected");
-        } else {
-            System.out.println("Database is not Connected");
-        }
+        // create database table
+        PostgresJDBC.createDatabaseTable();
 
-        // connect to the database
-        PostgresJDBC.connectToDatabase();
-
-        // check if the database is connected
-        if (PostgresJDBC.isDatabaseConnected()) {
-            System.out.println("Database is Connected");
-        } else {
-            System.out.println("Database is not Connected");
-        }
-
-        // close database connection
-        PostgresJDBC.closeDatabaseConnection();
-
-        // check if the database is connected
-        if (PostgresJDBC.isDatabaseConnected()) {
-            System.out.println("Database is Connected");
-        } else {
-            System.out.println("Database is not Connected");
-        }
+        // drop database table
+        PostgresJDBC.dropDatabaseTable();
     }
 }
