@@ -1,7 +1,12 @@
 package com.tutorial.practice;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -66,7 +71,7 @@ public class PostgresJDBC {
             PostgresJDBC.connectToDatabase();
 
             // generate create table query
-            final String createTableQuery = "CREATE TABLE public.jdbc (j_id int GENERATED ALWAYS AS IDENTITY NOT NULL, j_name varchar NOT NULL, CONSTRAINT jdbc_pk PRIMARY KEY (j_id))";
+            final String createTableQuery = "CREATE TABLE public.jdbc (j_id int GENERATED ALWAYS AS IDENTITY NOT NULL, j_name varchar NOT NULL, j_img BYTEA, CONSTRAINT jdbc_pk PRIMARY KEY (j_id))";
 
             // create statement
             Statement createTableStatement = PostgresJDBC.databaseConnection.createStatement();
@@ -79,7 +84,109 @@ public class PostgresJDBC {
             System.out.println("Table not Created in the Database");
             e.printStackTrace();
         } finally {
-            // close database connection in case of any exception occurs
+            // close database connection
+            PostgresJDBC.closeDatabaseConnection();
+        }
+    }
+
+    /*
+     * method to insert record into the database
+     */
+    private static void insertRecordToDatabase() {
+        try {
+            // connect to the database
+            PostgresJDBC.connectToDatabase();
+
+            // generate insert query
+            String insertQuery = "INSERT INTO public.jdbc(j_name, j_img) VALUES(?, ?)";
+
+            // load the image file
+            File imageFile = new File("D:\\scratch-pad\\Java\\jdbc_lcwd\\src\\main\\res\\img.png");
+
+            // convert the image file to a binary stream
+            FileInputStream imageFileStream = new FileInputStream(imageFile);
+
+            // get prepared statement
+            PreparedStatement insertRecordStatement = PostgresJDBC.databaseConnection.prepareStatement(insertQuery);
+
+            // set values to the query
+            insertRecordStatement.setString(1, "Rajesh");
+            insertRecordStatement.setBinaryStream(2, imageFileStream, imageFile.length());
+
+            // execute update
+            insertRecordStatement.executeUpdate();
+
+            System.out.println("Record Inserted into the Database Successfully");
+        } catch (SQLException | FileNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            // close database connection
+            PostgresJDBC.closeDatabaseConnection();
+        }
+    }
+
+    /*
+     * method to view records from the database using JDBC
+     */
+    private static void viewRecordsFromDatabase() {
+        try {
+            // create database connection
+            PostgresJDBC.connectToDatabase();
+
+            // generate select query
+            String selectRecordQuery = "SELECT * FROM public.jdbc";
+
+            // create statement
+            Statement selectRecordStatement = PostgresJDBC.databaseConnection.createStatement();
+
+            // execute query
+            ResultSet databaseRecords = selectRecordStatement.executeQuery(selectRecordQuery);
+
+            // check if any database record was found
+            if (databaseRecords.next()) {
+                // print database records
+                do {
+                    System.out.println("ID: " + databaseRecords.getInt(1) + ", Name: " + databaseRecords.getString(2));
+                } while (databaseRecords.next());
+            } else {
+                System.err.println("NO RECORD WAS FOUND IN THE DATABASE");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            // close database connection
+            PostgresJDBC.closeDatabaseConnection();
+        }
+    }
+
+    /*
+     * method to update existing record in the database using JDBC
+     */
+    private static void updateRecordInDatabase() {
+        try {
+            // connect to the database
+            PostgresJDBC.connectToDatabase();
+
+            // generate update query
+            String updateRecordQuery = "UPDATE public.jdbc SET j_name=? WHERE j_id=?";
+
+            // get prepared statement
+            PreparedStatement updateRecordStatement = PostgresJDBC.databaseConnection
+                    .prepareStatement(updateRecordQuery);
+
+            // set values to the query
+            updateRecordStatement.setString(1, "Sinha");
+            updateRecordStatement.setInt(2, 1);
+
+            // execute update
+            updateRecordStatement.executeUpdate();
+
+            System.out.println("Record Updated in the Database Successfully");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            // close database connection
             PostgresJDBC.closeDatabaseConnection();
         }
     }
@@ -106,7 +213,7 @@ public class PostgresJDBC {
             System.out.println("Table Dropped Failed");
             e.printStackTrace();
         } finally {
-            // close database connection in case of any exception occurs
+            // close database connection
             PostgresJDBC.closeDatabaseConnection();
         }
     }
@@ -132,6 +239,21 @@ public class PostgresJDBC {
     public static void runPostgresJDBC() {
         // create database table
         PostgresJDBC.createDatabaseTable();
+
+        // view records
+        PostgresJDBC.viewRecordsFromDatabase();
+
+        // insert record into the database
+        PostgresJDBC.insertRecordToDatabase();
+
+        // view records
+        PostgresJDBC.viewRecordsFromDatabase();
+
+        // update record in the database
+        PostgresJDBC.updateRecordInDatabase();
+
+        // view records
+        PostgresJDBC.viewRecordsFromDatabase();
 
         // drop database table
         PostgresJDBC.dropDatabaseTable();
