@@ -422,3 +422,21 @@ Types of Variables:
     * Case 2: Wherever 'var-arg' parameter is present, we can't replace it with 1D array.
 
                     someMethod(int... parameters) != someMethod(int[] parameters)
+
+
+
+* main() Method:
+----------------
+--> Whether a Java class contains the 'main()' method or not, and whether the 'main()' method is declared according to the requirement or not, these things won't be checked by the compiler. At run-time, JVM is responsible to check these things, and if JVM is unable to find the 'main()' method, then we will get runtime exception saying, 'NoSuchMethodError: main'
+
+--> At run-time the JVM always searches for the 'main()' method with the following prototype,
+
+                                public static void main(String[] args)
+    
+    The above syntax is very strict, and if we perform any change then we will get runtime exception saying, 'NoSuchMethodError: main'
+
+--> Overloading of the 'main()' method is possible but, JVM will always call the 'main()' method having the parameter declared as 'String[] args' only. The other overloaded methods we need to call explicitly like a normal method call.
+
+--> Inheritance concept is applicable for the 'main()' method, hence while executing the child class if the child class doesn't contain a 'main()' method in itself, then the parent class 'main()' method will be executed. Though it seems overriding concept is applicable for the 'main()' method, but it is not overriding and it is 'Method Hiding'.
+
+--> For the 'main()' method 'Inheritance' and 'Overloading' concepts are applicable. But 'overriding' concept is not applicable. Instead of 'overriding', 'Method Hiding' is applicable.
