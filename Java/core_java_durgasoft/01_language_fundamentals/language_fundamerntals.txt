@@ -440,3 +440,15 @@ Types of Variables:
 --> Inheritance concept is applicable for the 'main()' method, hence while executing the child class if the child class doesn't contain a 'main()' method in itself, then the parent class 'main()' method will be executed. Though it seems overriding concept is applicable for the 'main()' method, but it is not overriding and it is 'Method Hiding'.
 
 --> For the 'main()' method 'Inheritance' and 'Overloading' concepts are applicable. But 'overriding' concept is not applicable. Instead of 'overriding', 'Method Hiding' is applicable.
+
+
+* v1.7 Enhancements with respect to the 'main()' Method:
+------------------------------------------------------
+--> Until v1.6 of Java, if a class doesn't contain the 'main()' method, then we will get runtime exception saying, 'NoSuchMethodError: main'. But, from v1.7 onwards instead of this error, we will get more elaborated error information as shown below,
+
+    Error: Main method not found in class <class_name>, please define the main method as:
+                            public static void main(String[] args)
+
+--> From v1.7 of Java, 'main()' method is mandatory to start a program execution. Hence, even though a class contain static block, it won't be executed if it doesn't contain a 'main()' method.
+
+--> Without writing the 'main()' method it is possible to print some statement to the console by using static block. But this rule is applicable only till v1.6 of Java. From v1.7 onwards it is impossible to print some statement to the console without writing the 'main()' method.
