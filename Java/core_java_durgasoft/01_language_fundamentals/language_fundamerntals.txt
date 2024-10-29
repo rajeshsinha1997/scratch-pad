@@ -452,3 +452,15 @@ Types of Variables:
 --> From v1.7 of Java, 'main()' method is mandatory to start a program execution. Hence, even though a class contain static block, it won't be executed if it doesn't contain a 'main()' method.
 
 --> Without writing the 'main()' method it is possible to print some statement to the console by using static block. But this rule is applicable only till v1.6 of Java. From v1.7 onwards it is impossible to print some statement to the console without writing the 'main()' method.
+
+
+
+* Command-Line Arguments:
+-------------------------
+--> The arguments which are being passed from the command-prompt while executing a Java program, are known as the 'command-line' arguments. With these 'command-line' arguments, JVM will create a String array and by passing that array as argument, JVM will call the 'main()' method.
+
+--> The main objective of 'command-line' arguments is, we can customize the behavior of the 'main()' method.
+
+--> Within the 'main()' method the 'command-line' arguments are available in 'String' form.
+
+--> Usually space (' ') itself is the separator between the 'command-line' arguments. If a 'command-line' argument itself contains a space (' '), then we need to enclose it inside double-quotes ("").
