@@ -464,3 +464,47 @@ Types of Variables:
 --> Within the 'main()' method the 'command-line' arguments are available in 'String' form.
 
 --> Usually space (' ') itself is the separator between the 'command-line' arguments. If a 'command-line' argument itself contains a space (' '), then we need to enclose it inside double-quotes ("").
+
+
+
+* Java Coding Standards:
+------------------------
+--> Whenever we are writing Java code, it is highly recommended to follow coding standards. Whenever we are writing any component, it's name should reflect the purpose of that component (functionality). The main advantage of this approach is, readability and maintainability of the code will be improved.
+
+--> Coding Standards for Classes:
+    -----------------------------
+    * Usually, class names in Java are Nouns, and they should start with an upper-case character, and if it contains multiple words, every inner-word should start with an upper-case character.
+
+--> Coding Standards for Interfaces:
+    --------------------------------
+    * Usually, interface names in Java are adjectives and should start with an upper-case character, and if it contains multiple words then every inner-word should start with an upper-case character.
+
+--> Coding Standards for Methods:
+    -----------------------------
+    * Usually, method names in Java are either Verbs or Verb-Noun combinations, and they should start with a lower-case character, and if it contains multiple words, then every inner-word should start with an upper-case character (Camel-Case Convention).
+
+--> Coding Standards for Variables:
+    -------------------------------
+    * Usually, variable names in Java are Nouns, and they should start with a lower-case character, and if it contains multiple words, then every inner-word should start with an upper-case character (Camel-Case Convention).
+
+--> Coding Standards for Constants:
+    -------------------------------
+    * Usually, constant names in Java are Nouns, and they should contain only upper-case characters, and if it contains multiple-words, then these words are separated with the underscore ('_') symbol.
+
+    * Usually, we should declare constants in Java with 'public', 'static' and 'final' modifiers.
+
+--> Java Bean Coding Standards:
+    ---------------------------
+    * A Java Bean is a simple Java class with private 'properties' and public 'getter' and 'setter' methods.
+
+    * Setter Method: A setter method in Java should be a 'public' method, and the return type should be 'void'. The name of the method should be prefixed with the word 'set', and it should take some argument, that means it should not be a no-argument method.
+
+    * Getter Method: A getter method in Java should be a 'public' method, and the return type should not be 'void'. The name of the method should be prefixed with the word 'get', and it should not take any argument.
+
+    * For boolean properties, the name of the corresponding getter method can be prefixed with either the word 'get' or the word 'is', but it is always recommended to us the word 'is' as a prefix to the name of the getter method.
+
+--> Coding Standards for Listeners:
+    -------------------------------
+    * To register a listener in Java, the corresponding method name should be prefixed with the word 'add'.
+
+    * To unregister a listener in Java, the corresponding method name should be prefixed with the word 'remove'.
