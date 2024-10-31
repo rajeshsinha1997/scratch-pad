@@ -1,6 +1,5 @@
 Language Fundamentals
 ---------------------
-
 - Identifiers
 - Reserved Words
 - Data Types
@@ -11,3 +10,24 @@ Language Fundamentals
 - main Method
 - command-line Arguments
 - Java Coding Standards
+
+Operators and Assignments
+-------------------------
+- Increment and Decrement Operators
+- Arithmetic Operators
+- String Concatenation Operators
+- Relational Operators
+- Equality Operators
+- 'instanceof' Operator
+- Bitwise Operators
+- Short-Circuit Operators
+- Type Cast Operators
+- Assignment Operators
+- Conditional Operators
+- 'new' Operator
+- '[]' Operator
+- Operator Precedence
+- Evaluation Order of Operands
+- 'new' vs 'new Instance()'
+- 'instanceof' vs 'isInstance()'
+- 'ClassNotFoundException' vs 'NoClassDefFoundError'

@@ -392,7 +392,7 @@ Types of Variables:
 
 
 
-* var-arg (Variable Number of Arguments) Methods:
+var-arg (Variable Number of Arguments) Methods:
 -------------------------------------------------
 --> Until v1.4 of Java, we can't declare a method with variable number of arguments. If there is a change in number of arguments, compulsory we should go for a new method. It increases the length of the code and reduces readability. To overcome this problem, SUN people introduced 'var-arg' methods in v1.5 of Java. According to this, we can declare a method which can take variable number of arguments. Such type of methods are called 'var-arg' methods.
 
@@ -425,7 +425,7 @@ Types of Variables:
 
 
 
-* main() Method:
+main() Method:
 ----------------
 --> Whether a Java class contains the 'main()' method or not, and whether the 'main()' method is declared according to the requirement or not, these things won't be checked by the compiler. At run-time, JVM is responsible to check these things, and if JVM is unable to find the 'main()' method, then we will get runtime exception saying, 'NoSuchMethodError: main'
 
@@ -455,7 +455,7 @@ Types of Variables:
 
 
 
-* Command-Line Arguments:
+Command-Line Arguments:
 -------------------------
 --> The arguments which are being passed from the command-prompt while executing a Java program, are known as the 'command-line' arguments. With these 'command-line' arguments, JVM will create a String array and by passing that array as argument, JVM will call the 'main()' method.
 
@@ -467,7 +467,7 @@ Types of Variables:
 
 
 
-* Java Coding Standards:
+Java Coding Standards:
 ------------------------
 --> Whenever we are writing Java code, it is highly recommended to follow coding standards. Whenever we are writing any component, it's name should reflect the purpose of that component (functionality). The main advantage of this approach is, readability and maintainability of the code will be improved.
 

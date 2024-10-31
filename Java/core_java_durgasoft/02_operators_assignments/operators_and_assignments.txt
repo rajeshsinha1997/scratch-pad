@@ -1,0 +1,40 @@
+Increment and Decrement Operators:
+------------------------------------
+--> We can apply 'increment' and 'decrement' operators only for variables, and not for constant values. If we are trying to do so, then we will get compile-time error.
+
+--> Nesting of 'increment' and 'decrement' operators are not allowed.
+
+--> For 'final' variables, we can't apply 'increment' and 'decrement' operators.
+
+--> We can apply 'increment' and 'decrement' operators for every primitive type, except for 'boolean' type.
+
+--> Difference between 'b++' and 'b=b+1':
+    -------------------------------------
+    If we apply any arithmetic operator between two variables 'a' and 'b', the result type is always
+    'max(int, type_of_a, type_of_b)'. But in the case of 'increment' and 'decrement' operators, internal type-casting will be performed automatically.
+
+
+
+Arithmetic Operators:
+---------------------
+--> If we apply any arithmetic operators between two variables 'a' and 'b', the result type is always,
+
+                                max(int, type_of_a, type_of_b)
+
+--> Infinity: In integral arithmetic (byte, short, int, long), there is no way to represent 'Infinity'. Hence, if 'Infinity' is the result, we will get 'ArithmeticException' in integral arithmetic. But, in floating-point arithmetic (float, double), there is a way to represent 'Infinity'. For this, 'Float' and 'Double' classes contains the constants 'POSITIVE_INFINITY' and 'NEGATIVE_INFINITY'. Hence, even though the result is 'Infinity', we won't get any 'ArithmeticException' in floating-point arithmetic.
+
+--> NaN (Not a Number): In integral arithmetic (byte, short, int, long), there is no way to represent 'undefined' values. Hence, if the result is 'undefined', we will get RuntimeException saying 'ArithmeticException: / by zero'. But, in floating-point arithmetic (float, double), there is a way to represent 'undefined' results. For this, 'Float' and 'Double' classes contains the constant 'NaN'. Hence, if the result is 'undefined', we won't get any 'ArithmeticException' in floating-point arithmetic.
+
+--> For any value 'x' including 'NaN', the following expressions returns the value 'false',
+    * x < NaN
+    * x <= NaN
+    * x > NaN
+    * x >= NaN
+    * x == NaN
+
+--> For any value 'x' including 'NaN', the following expressions returns the value 'true',
+    * x != NaN
+
+--> The 'ArithmeticException' in Java is a 'RuntimeException' and not 'Compile Time Error', and it is possible to encounter only in integral arithmetic but not in floating-point arithmetic.
+
+--> The only operators which cause the 'ArithmeticException' are '/' and '%'.
