@@ -1,0 +1,15 @@
+Basic Components of JDBC Application:
+-------------------------------------
+* Database Driver
+* Connection Object
+* Statement Object
+* ResultSet Object
+
+Steps to Develop a JDBC Application:
+------------------------------------
+* Load and register the Database Driver.
+* Establish connection between the Java application and the database
+* Creation of the Statement object
+* Send and execute the SQL query
+* Process result from the ResultSet object
+* Close the database connection
