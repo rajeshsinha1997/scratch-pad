@@ -38,3 +38,9 @@ Arithmetic Operators:
 --> The 'ArithmeticException' in Java is a 'RuntimeException' and not 'Compile Time Error', and it is possible to encounter only in integral arithmetic but not in floating-point arithmetic.
 
 --> The only operators which cause the 'ArithmeticException' are '/' and '%'.
+
+
+
+String Concatenation Operator ('+'):
+------------------------------------
+--> The only overloaded operator in Java is the '+' operator. Sometimes it acts as an arithmetic addition operator, and sometimes it acts as a String concatenation operator. If at least one argument is of String type, then the '+' operator acts as the String concatenation operator, and, if both of the arguments are of Number type, then the '+' operator acts as the arithmetic addition operator.
