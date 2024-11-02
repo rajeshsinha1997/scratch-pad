@@ -44,3 +44,29 @@ Arithmetic Operators:
 String Concatenation Operator ('+'):
 ------------------------------------
 --> The only overloaded operator in Java is the '+' operator. Sometimes it acts as an arithmetic addition operator, and sometimes it acts as a String concatenation operator. If at least one argument is of String type, then the '+' operator acts as the String concatenation operator, and, if both of the arguments are of Number type, then the '+' operator acts as the arithmetic addition operator.
+
+
+
+Relational Operators:
+---------------------
+--> We can apply relational operators for every primitive type, except for 'boolean' type.
+
+--> We can't apply relational operators for 'Object' types.
+
+--> Nesting of relational operators is not allowed in Java. We will get compile-time error if we do so.
+
+
+
+Equality Operators:
+-------------------
+--> We can apply equality operators for every primitive type, including 'boolean' type also.
+
+--> We can apply equality operators for object types also. For two object references 'r1' and 'r2', 'r1 == r2' returns 'true', if and only if both are referencing to the same object (reference/address comparison).
+
+--> If we apply equality operators for object types, then compulsory there should be some relation between the types of the arguments (either child and parent or of the same type), otherwise we will get compile-time error.
+
+* Difference between '==' operator and 'equals()' method:
+  -------------------------------------------------------
+  In general, we can use '==' operator for reference comparison (address comparison), and 'equals()' method for content comparison.
+
+--> For any object reference 'r', the expression 'r == null' will always be evaluated to the value 'false'. But, the expression 'null == null' will always be evaluated to 'true'.
