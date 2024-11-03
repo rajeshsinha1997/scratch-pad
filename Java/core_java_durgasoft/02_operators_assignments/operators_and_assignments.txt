@@ -70,3 +70,39 @@ Equality Operators:
   In general, we can use '==' operator for reference comparison (address comparison), and 'equals()' method for content comparison.
 
 --> For any object reference 'r', the expression 'r == null' will always be evaluated to the value 'false'. But, the expression 'null == null' will always be evaluated to 'true'.
+
+
+
+'instanceof' Operator:
+----------------------
+--> We can use the 'instanceof' operator to check whether a given object is of a particular type or not.
+
+--> The syntax of the 'instanceof' operator is as follows,
+
+                                            'r instanceof X'
+    
+    where,
+    r - object reference
+    X - name  of a class or interface
+
+--> To use the 'instanceof' operator, compulsory there should be some relation between the argument types. Either it has to be child to parent or they have to be of the same type. Otherwise, we will get compile-time error.
+
+--> For any class or interface 'X', the expression 'null instanceof X' will always be evaluated to 'false'.
+
+
+
+Bitwise Operators:
+------------------
+--> We can apply bitwise operators ('&', '|', '^') for both boolean types and integral types.
+
+
+
+Bitwise Complement Operator (~):
+--------------------------------
+--> We can apply the bitwise complement operator only for the integral types, but not for the boolean types. If we are trying to apply this operator for boolean types, then we will get compile-time error.
+
+
+
+Boolean Complement Operator (!):
+--------------------------------
+--> We can apply boolean complement operator only for the boolean types, but not for the integral types.
