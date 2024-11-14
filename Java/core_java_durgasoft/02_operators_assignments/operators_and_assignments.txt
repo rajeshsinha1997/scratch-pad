@@ -106,3 +106,27 @@ Bitwise Complement Operator (~):
 Boolean Complement Operator (!):
 --------------------------------
 --> We can apply boolean complement operator only for the boolean types, but not for the integral types.
+
+
+
+Short-Circuit Operators (&&, ||):
+---------------------------------
+--> These are exactly same as bitwise operators (&, |), except for the following differences,
+
+    * In case of bitwise operators, both arguments should be evaluated always. Whereas, for short-circuit operators, evaluation of the second argument is optional.
+
+    * Relatively performance is low for the bitwise operators compared to the short-circuit operators.
+
+    * Bitwise operators are applicable for both 'boolean' and 'integral' types. Whereas, short-circuit operators are applicable only for the 'boolean' types and not for the 'integral' types.
+
+
+
+Type-Cast Operator:
+-------------------
+--> There are two types of type-casting possible,
+    * Implicit Type-Casting
+    * Explicit Type-Casting
+
+--> Implicit Type-Casting: In case of implicit type-casting, the compiler is responsible to perform the type-casting. Whenever we are assigning some value of a smaller data-type to some variable of a bigger data-type, implicit type-casting will e performed. It is also known as 'widening' or 'up-casting'. Also, there is no loss of information in this kind of type-casting.
+
+--> Explicit Type-Casting: 
