@@ -129,4 +129,8 @@ Type-Cast Operator:
 
 --> Implicit Type-Casting: In case of implicit type-casting, the compiler is responsible to perform the type-casting. Whenever we are assigning some value of a smaller data-type to some variable of a bigger data-type, implicit type-casting will e performed. It is also known as 'widening' or 'up-casting'. Also, there is no loss of information in this kind of type-casting.
 
---> Explicit Type-Casting: 
+--> Explicit Type-Casting: In case of explicit type-casting, the programmer is responsible to perform the type-casting. Whenever we are assigning some value of a bigger data-type to some variable of a smaller data-type, then explicit type-casting is required. It is also known as 'narrowing' or 'down-casting'. There maybe a chance of loss of information in this kind of type-casting.
+
+--> Whenever we are assigning some value of a bigger data-type to some variable of a smaller data-type by explicit type-casting, the most significant bits (MSB) will be lost. We have to consider only the least significant bits (LSB).
+
+--> If we assign floating-point values to the integral types by explicit type-casting, the digits after the decimal point will be lost.
