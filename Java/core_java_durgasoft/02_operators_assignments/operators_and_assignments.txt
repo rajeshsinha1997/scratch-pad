@@ -134,3 +134,120 @@ Type-Cast Operator:
 --> Whenever we are assigning some value of a bigger data-type to some variable of a smaller data-type by explicit type-casting, the most significant bits (MSB) will be lost. We have to consider only the least significant bits (LSB).
 
 --> If we assign floating-point values to the integral types by explicit type-casting, the digits after the decimal point will be lost.
+
+
+
+Assignment Operator:
+--------------------
+--> There are 3 types of assignment operators,
+    * Simple Assignment --> example: int x = 10;
+    * Chained Assignment --> example: int a,b,c,d; a=b=c=d=20;
+    * Compound Assignment --> example: int a = 10; a+=20;
+
+--> We can't perform chained assignment directly at the time of declaring the variables. Otherwise we will get compile-time error.
+
+--> Sometimes assignment operator is mixed with some other operator. Such type of assignment operators are called compound-assignment operators. The following are the only possible compound assignment operators in Java,
+    * +=
+    * -=
+    * *=
+    * /=
+    * %=
+    * &=
+    * |=
+    * ^=
+    * >>=
+    * >>>=
+    * <<=
+
+--> In case of compound assignment operators, internal type-casting will be performed automatically.
+
+
+
+Conditional Operator (?:):
+--------------------------
+--> The only possible ternary operator in Java is the conditional operator.
+    Example:
+                                int x = (10 < 20) ? 30 : 40;
+    
+--> We can perform nesting of conditional operators as well.
+
+
+
+'new' Operator:
+---------------
+--> We can use the 'new' operator to create an object in Java.
+
+--> After creating an object in Java, the corresponding class's constructor will be executed to perform the initialization of the created object. Hence, the constructor is not used for creation of object, rather it is for the initialization of the created object.
+
+--> In Java we have only 'new' keyword, but not 'delete' keyword. Because, destruction of useless objects is the responsibility of garbage collector.
+
+
+
+'[]' Operator:
+--------------
+--> We use the '[]' operator to declare and create arrays in Java.
+
+
+
+Java Operator Precedence:
+-------------------------
+1. Unary Operators:
+    [], x++, x--
+    ++x, --x, ~, !
+    new, <type>
+
+2. Arithmetic Operators:
+    *, /, %
+    +, -
+
+3. Shift Operators:
+    >>, >>>, <<
+
+4. Comparison Operators:
+    <, <=, >, >=, instanceof
+
+5. Equality Operators:
+    ==, !=
+
+6. Bitwise Operators:
+    &
+    ^
+    |
+
+7. Short-Circuit Operators:
+    &&
+    ||
+
+8. Conditional Operator:
+    ?:
+
+9. Assignment Operators:
+    =, +=, -=, *=, /=, %=, &=, |=, ^=, >>=, >>>=, <<=
+
+
+
+Evaluation Order of Java Operands:
+----------------------------------
+--> In Java, we have only operator precedence, but not operand precedence. Before applying any operator, all operands will be evaluated from left to right.
+
+
+
+'new' vs 'newInstance()':
+-------------------------
+--> We can use the 'new' operator to create an object of a class, only if we know the name of the corresponding class at the beginning.
+
+--> 'newInstance()' is a method present in the class 'Class'. We can use this method to create a Java object if we don't know the name of the corresponding class at the beginning and the name of the corresponding class is available dynamically at runtime.
+
+--> In the case of 'new' operator, based on our requirement, we can invoke any constructor. But 'newInstance()' method internally calls the corresponding class's no-argument constructor, hence to use the 'newInstance()' method, the corresponding class must contain a no-argument constructor, otherwise we will get runtime exception 'InstantiationException'.
+
+--> While using 'new' operator, at runtime if the corresponding class file is not available, then we will get runtime exception 'NoClassDefFoundError', which is also an unchecked exception. While using 'newInstance()' method, at runtime if the corresponding class file is not available, then we will get runtime exception 'ClassNotFoundException', which is also a checked exception.
+
+
+
+'instanceof' vs 'isInstance()':
+-------------------------------
+--> 'instanceof' is an operator in Java. We can use this operator to check if a given Java object is of a particular type or not, where the corresponding type is already known to us at the beginning.
+
+--> 'isInstance()' is a method present in 'java.lang.class'. We can use this method to check if a given Java object is of a particular type or not, where we don't know the corresponding type at the beginning and the type is available dynamically at runtime.
+
+--> 'isInstance()' is a method equivalent of the 'instanceof' operator.
