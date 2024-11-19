@@ -28,3 +28,31 @@ Selection Statements:
     The semicolon (;) is a valid Java statement, which is also known as the empty statement.
 
     There is no 'dangling else' problem in Java. Every 'else' block is mapped to the nearest 'if' block.
+
+* Switch-Case: If several options are available, then it is not recommended to use nested 'if-else' statements, because it reduces readability. To handle this requirement, we should go for 'switch-case' statement.
+
+    Until v1.4 of Java, the allowed argument types for the 'switch' statement are,
+    --> byte
+    --> short
+    --> char
+    --> int
+
+    From v1.5 of Java onwards, corresponding wrapper classes of the above types and Enum types are also allowed as argument of 'switch' statement. And, from v1.7 of Java onwards, String type is also allowed as argument of 'switch' statement.
+
+    Curly braces are mandatory in 'switch' statement.
+
+    Both 'case' and 'default' statements are optional, i.e., an empty 'switch' statement is a valid Java syntax.
+
+    Inside 'switch', every statement should be under some 'case' or 'default'. Independent statements are not allowed inside a 'switch', otherwise we will get compile-time error.
+
+    Every 'case' label should be a compile-time constant (which are constant expressions). Otherwise, we will get compile-time error.
+
+    Both 'switch' argument and 'case' labels can be expressions, but 'case' labels should be constant expressions.
+
+    Every 'case' label should be in the range of the argument type of the 'switch' statement. Otherwise, we will get compile-time error.
+
+    Duplicate 'case' labels are not allowed. Otherwise, we will get compile-time error.
+
+    Fall-Through: Within the 'switch' statement if any 'case' is matched, from that case onwards all statements will be executed until a 'break' or end of the switch is encountered. This is called 'Fall-Through' inside a 'switch' statement. The main advantage of 'Fall-Through' inside a switch is, we can define common action for multiple cases (code reusability is improved).
+
+    Default Case: Within the switch, we can write the 'default' case at most once. The 'default' case will be executed if and only if no other case is matched. Within the 'switch', we can write the default case anywhere, but it is recommended to write the 'default' case as the last case statement.
