@@ -56,3 +56,15 @@ Selection Statements:
     Fall-Through: Within the 'switch' statement if any 'case' is matched, from that case onwards all statements will be executed until a 'break' or end of the switch is encountered. This is called 'Fall-Through' inside a 'switch' statement. The main advantage of 'Fall-Through' inside a switch is, we can define common action for multiple cases (code reusability is improved).
 
     Default Case: Within the switch, we can write the 'default' case at most once. The 'default' case will be executed if and only if no other case is matched. Within the 'switch', we can write the default case anywhere, but it is recommended to write the 'default' case as the last case statement.
+
+
+
+Iterative Statements:
+---------------------
+* While Loop: If we don't know the number of iterations in advance, then we should go for the 'while' loop. The conditional argument used in the 'while' loop should be of type 'boolean'. If we are trying to provide any other type, then we will get compile-time error. Curly braces are optional and without curly braces, we can take only one statement under the 'while' loop, which should not be a declarative statement.
+
+--> Every 'final' variable will be replaced by the value at compile-time only.
+
+--> If every argument is a 'final' variable (compile-time constant), then that operation should be performed at compile-time only.
+
+* Do-While Loop: If we want to execute the corresponding loop body at least once, then we should go for the 'Do-While' loop. Curly braces are optional, and without curly braces, we should take at least one statement between 'do' and 'while', which should not be a declarative statement.
