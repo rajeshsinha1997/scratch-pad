@@ -68,3 +68,15 @@ Iterative Statements:
 --> If every argument is a 'final' variable (compile-time constant), then that operation should be performed at compile-time only.
 
 * Do-While Loop: If we want to execute the corresponding loop body at least once, then we should go for the 'Do-While' loop. Curly braces are optional, and without curly braces, we should take at least one statement between 'do' and 'while', which should not be a declarative statement.
+
+* For Loop: 'For' loop is the most commonly used loop in Java. If we know the number of iterations in advance, then 'for' loop is the best choice. Curly braces are optional, and without curly braces we can take only one statement under 'for' loop, which should not be a declarative statement.
+
+    The 'initialization' section of a 'for' loop will be executed only once in the whole 'for' loop life-cycle. At this section, we can declare and initialize local variables of the corresponding 'for' loop. Here, also we can declare any number of variables but they should be of the same data-type. By mistake, if we are trying to declare variables of different data-types, then we will get compile-time error.
+
+    In the 'initialization' section, we can take any valid java statement.
+
+    In the 'conditional-check' section of a 'for' loop, we can take any valid Java expression which should be of 'boolean' data-type. This section is also optional, and if we are not taking anything, then compiler will always place 'true'.
+
+    In the 'increment/decrement' section of a 'for' loop, we can take any valid Java statement. This is also an optional section.
+
+    * All the 3 sections of a 'for' loop are optional and independent of each-other.
