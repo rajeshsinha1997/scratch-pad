@@ -80,3 +80,19 @@ Iterative Statements:
     In the 'increment/decrement' section of a 'for' loop, we can take any valid Java statement. This is also an optional section.
 
     * All the 3 sections of a 'for' loop are optional and independent of each-other.
+
+* For-Each Loop (Enhanced For Loop): The 'For-Each' loop or the 'Enhanced For' loop was introduced in the v1.5 of Java. It is a specially designed loop to retrieve elements of 'Arrays' and 'Collections'.
+
+    The 'For-Each' loop is best choice to retrieve elements of 'Arrays' and 'Collections'. But, it's limitation is it is applicable only for 'Arrays' and 'Collections', and it is not a general purpose loop.
+
+    By using the normal 'for' loop, we can print the elements of an array either in their original order, or in the reverse order. But, by using the 'for-each' loop, we can print the elements of an array only in their original order, but not in the reverse order.
+
+* Iterable Interface: The target element in a 'for-each' loop should be an 'Iterable' object. An object is said to be an 'Iterable' object if and only if the corresponding class implements the class 'java.lang.Iterable'. The 'Iterable' interface was introduced in the v1.5 of Java and it contains only a single method which is 'iterator'.
+
+    All 'Array' related classes and 'Collection' implemented classes already implements the 'Iterable' interface.
+
+* Difference between 'Iterator' and 'Iterable' interfaces:
+    --> The 'Iterator' interface is related to collections, whereas the 'Iterable' interface is related to the 'for-each' loop.
+    --> We can use the 'Iterator' interface to retrieve elements of collections one by one. Whereas the target element in a 'for-each' loop should be an 'Iterable' object.
+    --> The 'Iterator' interface is present in the 'java.util' package. Whereas the 'Iterable' interface is present in the 'java.lang' package.
+    --> The 'Iterator' interface defines 3 methods, 'hasNext()', 'next()', and 'remove()'. Whereas the 'Iterable' interface defines a single method which is 'iterator()'.
