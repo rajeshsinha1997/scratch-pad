@@ -96,3 +96,18 @@ Iterative Statements:
     --> We can use the 'Iterator' interface to retrieve elements of collections one by one. Whereas the target element in a 'for-each' loop should be an 'Iterable' object.
     --> The 'Iterator' interface is present in the 'java.util' package. Whereas the 'Iterable' interface is present in the 'java.lang' package.
     --> The 'Iterator' interface defines 3 methods, 'hasNext()', 'next()', and 'remove()'. Whereas the 'Iterable' interface defines a single method which is 'iterator()'.
+
+
+
+Transfer Statements:
+--------------------
+* Break: We can use the 'break' statement inside the following places,
+    --> Switch-Case: To stop 'fall-through' inside switch-case.
+    --> Loop: To break the loop execution cycle based on some condition.
+    --> Labeled Block: To break the block execution based on some condition.
+
+    These are the only places where we can use the 'break' statement. If we are using the 'break' statement anywhere else, we will get compile-time error.
+
+* Continue: We can use the 'continue' statement inside loops only, to skip the current iteration and continue for the next iteration. If we are using the 'continue' statement anywhere other than a 'loop', we will get compile-time error.
+
+* Labeled Break & Continue: We can use labeled 'break' and 'continue' to break or continue a specific loop in nested loops.
