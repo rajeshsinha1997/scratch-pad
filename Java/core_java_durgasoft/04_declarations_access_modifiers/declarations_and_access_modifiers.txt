@@ -1,0 +1,15 @@
+Java Source File Structure:
+---------------------------
+* A Java program (Java source file) can contain any number of classes, but at most one class can be declared as 'public'. If there is a 'public' class, then the name of the program and the name of the 'public' class must be matched, otherwise we will get compile-time error.
+
+--> If there is no 'public' class available in a java program, then we can use any name for the Java program, and there are no restrictions.
+
+--> If a 'public' class is available in a Java program, then name of the Java program should be same as the name of the 'public' class, otherwise we will get compile-time error.
+
+--> If a Java program contains more than one 'public' class, then we will get compile-time error.
+
+--> Whenever we are compiling a Java program, for every class present in that program, a separate class file will be generated.
+
+--> We can compile a Java program, but we can run a Java class (.class file).
+
+--> Whenever we are executing a Java class, if the corresponding class file is not available, then we will get runtime exception 'NoClassDefFoundError'. Also, when we are executing a Java class, then the corresponding class's 'main()' method will be executed. If that class doesn't contain a 'main()' method, then we will get runtime exception 'NoSuchMethodError'.

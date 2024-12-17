@@ -31,3 +31,10 @@ Operators and Assignments
 - 'new' vs 'new Instance()'
 - 'instanceof' vs 'isInstance()'
 - 'ClassNotFoundException' vs 'NoClassDefFoundError'
+
+Declarations and Access Modifiers
+---------------------------------
+- Java Source File Structure
+- Class Level Modifiers
+- Member Level Modifiers
+- Interfaces
