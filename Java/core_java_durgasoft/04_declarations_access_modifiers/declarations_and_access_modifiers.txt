@@ -13,3 +13,5 @@ Java Source File Structure:
 --> We can compile a Java program, but we can run a Java class (.class file).
 
 --> Whenever we are executing a Java class, if the corresponding class file is not available, then we will get runtime exception 'NoClassDefFoundError'. Also, when we are executing a Java class, then the corresponding class's 'main()' method will be executed. If that class doesn't contain a 'main()' method, then we will get runtime exception 'NoSuchMethodError'.
+
+--> It is not recommended to declare multiple classes in a single Java source file. It is highly recommended to declare only one class per Java source file, and the name of the Java program should be same as the name of the class declared in that Java source file. The main advantage of this approach is readability and maintainability of the code will be improved.
