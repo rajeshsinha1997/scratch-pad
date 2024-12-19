@@ -2,16 +2,43 @@ Java Source File Structure:
 ---------------------------
 * A Java program (Java source file) can contain any number of classes, but at most one class can be declared as 'public'. If there is a 'public' class, then the name of the program and the name of the 'public' class must be matched, otherwise we will get compile-time error.
 
---> If there is no 'public' class available in a java program, then we can use any name for the Java program, and there are no restrictions.
+    --> If there is no 'public' class available in a java program, then we can use any name for the Java program, and there are no restrictions.
 
---> If a 'public' class is available in a Java program, then name of the Java program should be same as the name of the 'public' class, otherwise we will get compile-time error.
+    --> If a 'public' class is available in a Java program, then name of the Java program should be same as the name of the 'public' class, otherwise we will get compile-time error.
 
---> If a Java program contains more than one 'public' class, then we will get compile-time error.
+    --> If a Java program contains more than one 'public' class, then we will get compile-time error.
 
---> Whenever we are compiling a Java program, for every class present in that program, a separate class file will be generated.
+    --> Whenever we are compiling a Java program, for every class present in that program, a separate class file will be generated.
 
---> We can compile a Java program, but we can run a Java class (.class file).
+    --> We can compile a Java program, but we can run a Java class (.class file).
 
---> Whenever we are executing a Java class, if the corresponding class file is not available, then we will get runtime exception 'NoClassDefFoundError'. Also, when we are executing a Java class, then the corresponding class's 'main()' method will be executed. If that class doesn't contain a 'main()' method, then we will get runtime exception 'NoSuchMethodError'.
+    --> Whenever we are executing a Java class, if the corresponding class file is not available, then we will get runtime exception 'NoClassDefFoundError'. Also, when we are executing a Java class, then the corresponding class's 'main()' method will be executed. If that class doesn't contain a 'main()' method, then we will get runtime exception 'NoSuchMethodError'.
 
---> It is not recommended to declare multiple classes in a single Java source file. It is highly recommended to declare only one class per Java source file, and the name of the Java program should be same as the name of the class declared in that Java source file. The main advantage of this approach is readability and maintainability of the code will be improved.
+    --> It is not recommended to declare multiple classes in a single Java source file. It is highly recommended to declare only one class per Java source file, and the name of the Java program should be same as the name of the class declared in that Java source file. The main advantage of this approach is readability and maintainability of the code will be improved.
+
+
+
+* Types of Import Statements: There are two types of 'import' statements in Java,
+    - explicit class import
+    - implicit class import
+
+    --> Explicit Class Import: It is highly recommended to use explicit class import, because it improves the readability of the code. Below is an example of explicit class import,
+        - import <package_name>.<class_name>
+
+    --> Implicit Class Import: It is not recommended to use implicit class import, because it reduces the readability of the code. Below is an example of implicit class import,
+        - import <package_name>.*
+
+* Whenever we are using fully qualified names, it is not required to write import statements. Similarly, whenever we are writing import statements, it is not recommended to use fully qualified names.
+
+* While resolving class names, the Java compiler will always gives a precedence in the following order,
+    - explicit class import
+    - classes present in the current working directory (default package)
+    - implicit class import
+
+* Whenever we are importing a Java package, all classes and interfaces present in that package become available by default, but not the sub-package classes. If we want to use any class from the sub-package, compulsory we should write another import statement until sub-package level.
+
+* All classes and interfaces present in the following packages are by default available to every Java program. Hence, we are not required to write import statement for these packages.
+    - java.lang
+    - default package (current working directory)
+
+* Import statements are totally compile-time related concepts. If more number of imports are present, then the compile-time will increase in proportion, but there will be no effect on the execution time (runtime).
