@@ -42,3 +42,18 @@ Java Source File Structure:
     - default package (current working directory)
 
 * Import statements are totally compile-time related concepts. If more number of imports are present, then the compile-time will increase in proportion, but there will be no effect on the execution time (runtime).
+
+* Difference between #include (C language) and import statement (Java language): In the case of #include (C language) all of the input-output header files will be loaded at the beginning only (at translation time), hence it is 'static include'. But in the case of import statement (Java language), no class file will be loaded at the beginning. Whenever we are using a particular class, then only the corresponding class file will be loaded. This is considered as 'dynamic include' or 'load-on-demand' or 'load-on-fly'.
+
+* New Features in v1.5 of Java: Below are some of the major features which were newly introduced in the v1.5 of Java,
+    - for-each loop
+    - var-arg methods
+    - Auto-boxing and Auto-unboxing
+    - Generics
+    - co-verient return types
+    - Queue
+    - Annotations
+    - Enums
+    - static-import
+
+* Static Import: Static import was a new concept which was introduced in v1.5 of Java. According to SUN, usage of static import reduces length of the code and improves readability. But, according to worldwide programming experts, usage of the static import creates confusion and reduces readability. Hence, if there is no specific requirement, then it is not recommended to use static import. Usually, we can access static members of a class by using that specific class name. But, whenever we are writing static import, we can access static members directly without class name.
