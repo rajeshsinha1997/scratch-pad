@@ -57,3 +57,10 @@ Java Source File Structure:
     - static-import
 
 * Static Import: Static import was a new concept which was introduced in v1.5 of Java. According to SUN, usage of static import reduces length of the code and improves readability. But, according to worldwide programming experts, usage of the static import creates confusion and reduces readability. Hence, if there is no specific requirement, then it is not recommended to use static import. Usually, we can access static members of a class by using that specific class name. But, whenever we are writing static import, we can access static members directly without class name.
+
+* Explanation of 'System.out.println()': 'System' is a class present in 'java.lang' package. 'out' is a static variable present in the 'System' class of type 'PrintStream'. 'println()' is a method present in the 'PrintStream' class.
+
+* While resolving static members, the Java compiler will always consider the precedence (priority) in the following order,
+    - current class static members
+    - explicit static imports
+    - implicit static imports
