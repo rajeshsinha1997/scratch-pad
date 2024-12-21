@@ -64,3 +64,7 @@ Java Source File Structure:
     - current class static members
     - explicit static imports
     - implicit static imports
+
+* Two packages contains a class or interface with the same name is very rare in Java, and hence ambiguity problem is also very rare in case of normal import statements. But two classes or interfaces contains a variable or method with the same name is very common in Java, and hence ambiguity problem is also very common problem in case of static import statements.
+
+* Difference between normal import and static import statements: We can use normal import statements to import classes and interfaces of a specific package in Java. Whenever we are using normal import statement, it is not required to use the fully qualified names, and we can use the corresponding short names directly. We can use the static import statements to import static members of a specific class or interface in Java. Whenever we are writing static import statements, it is not required to use the corresponding class or interface names to access the static members of that specific class or interface, and we can access them directly.
