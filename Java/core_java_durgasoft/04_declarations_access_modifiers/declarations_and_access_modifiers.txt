@@ -89,3 +89,5 @@ Java Source File Structure:
 * In any Java source file, there can be at most one package statement, i.e. more than one package statement is not allowed, otherwise we will get compile-time error.
 
 * In any Java program, the first non-comment statement should be a package statement (if it is available). Otherwise we will get compile-time error.
+
+* An empty source file is also a valid Java program.
