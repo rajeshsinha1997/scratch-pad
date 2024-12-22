@@ -68,3 +68,24 @@ Java Source File Structure:
 * Two packages contains a class or interface with the same name is very rare in Java, and hence ambiguity problem is also very rare in case of normal import statements. But two classes or interfaces contains a variable or method with the same name is very common in Java, and hence ambiguity problem is also very common problem in case of static import statements.
 
 * Difference between normal import and static import statements: We can use normal import statements to import classes and interfaces of a specific package in Java. Whenever we are using normal import statement, it is not required to use the fully qualified names, and we can use the corresponding short names directly. We can use the static import statements to import static members of a specific class or interface in Java. Whenever we are writing static import statements, it is not required to use the corresponding class or interface names to access the static members of that specific class or interface, and we can access them directly.
+
+* Packages: It is an encapsulation mechanism in Java to group related classes and interfaces into a single unit, which is nothing but a package. As example, all classes and interfaces which are required for database operations, are grouped into a single package which is nothing but the 'java.sql' package. All classes and interfaces which are useful for File IO operations are grouped into a separate package which is nothing but the 'java.io' package.
+
+* The main advantages of packages are,
+    - To resolve naming conflicts, i.e. unique identification of our components.
+    - It improves modularity of the application.
+    - It improves maintainability of the application.
+    - It provides security for our components.
+
+* There is one universally accepted naming convention for packages, i.e. to use the internet domain name in reverse.
+    Ex: 'com.citibank.loan.housing.Account'
+
+* After compiling a Java program, if we want to place the generated class file/files to a specific location, we have to use the below command for compiling the Java program,
+
+    - javac -d <location_to_place_generated_class_files> <java_program_name>.java
+
+    As destination, we can take any valid directory name. But, if the specified directory or path not already available, then we will get compile-time error. Also at the time of execution, we have to use the fully qualified name for the corresponding Java program.
+
+* In any Java source file, there can be at most one package statement, i.e. more than one package statement is not allowed, otherwise we will get compile-time error.
+
+* In any Java program, the first non-comment statement should be a package statement (if it is available). Otherwise we will get compile-time error.
