@@ -91,3 +91,38 @@ Java Source File Structure:
 * In any Java program, the first non-comment statement should be a package statement (if it is available). Otherwise we will get compile-time error.
 
 * An empty source file is also a valid Java program.
+
+
+
+Class Level Modifier:
+---------------------
+* Whenever we are writing our own classes, we have to provide some information about our class to the JVM, like whether the class will be accessible from anywhere or not, whether any child class creation is possible or not, whether object creation is possible or not, etc. We can specify this information by using appropriate modifiers.
+
+* The only applicable modifiers for top level classes are,
+    - public
+    - default
+    - final
+    - abstract
+    - strictfp
+
+* The only applicable modifiers for inner classes are,
+    - public
+    - default
+    - final
+    - abstract
+    - strictfp
+    - private
+    - protected
+    - static
+
+* Access Specifiers vs Access Modifiers: 'public', 'private, 'protected' and 'default' are considered as 'specifiers'. Except these remaining are considered as 'modifiers'. But this rule is applicable only for old languages like C or C++. In Java there is no such rule, and all are considered as 'modifiers' only, there is no word like 'specifier' in Java.
+
+* 'public' class: If a Java class is declared as 'public', then we can access that class from anywhere.
+
+* 'default' class: If a Java class is declared as 'default', then we can access that class only within the current package, i.e. from outside package we can't access. Hence, 'default' access is also known as 'package-level' access.
+
+* 'final' modifier: 'final' is a modifier in Java which is applicable for classes, methods and variables. The main advantage of 'final' keyword is, we can achieve security and we can provide unique implementation. But, the main disadvantage of the 'final' keyword is, we are missing key benefits of OOPs (Inheritance because of final classes, Polymorphism because of final methods). Hence, if there is no specific requirement, then it is not recommended to use the 'final' keyword.
+
+* 'final' class: If a Java class is declared as 'final', we can't extend functionalities of that class, i.e. we can't create any child class for that class, i.e. 'inheritance' is not possible for 'final' classes. Every method present inside a 'final' class is always 'final' by default. But, every variable present inside a 'final' class need not be 'final'.
+
+* 'final' methods: In Java, the methods which are defined in a parent class, are by default available to the child classes through 'inheritance'. If we are not satisfied with the method implementations in the parent class, then we can redefine the methods in the child classes based on our requirements. This process is called 'overriding'. If the parent class method is declared as 'final', then we can't override that method in the child classes, because it's implementation is 'final'.
