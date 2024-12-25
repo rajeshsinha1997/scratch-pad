@@ -140,3 +140,23 @@ Class Level Modifier:
 * An abstract class can contain 'final' methods, but a final class can't have any 'abstract' method.
 
 * It is highly recommended to use the 'abstract' modifier because it promotes several OOP features (like Inheritance and Polymorphism).
+
+* 'strictfp' (Strict Floating Point) modifier: The 'strictfp' modifier was introduced in the v1.2 of Java. We can use this modifier for classes and methods, but not for variables. Usually the results of floating-point arithmetic are varied from platform to platform. If we want platform independent results for floating-point arithmetic, then we should go for the 'strictfp' modifier.
+
+* 'strictfp' class: If a class is declared as 'strictfp', then every floating-point calculation present in every 'concrete' method has to follow the 'IEEE 754' standard, so that we will get platform independent results. We can declare a class as both 'abstract' and 'strictfp', i.e. 'abstract-strictfp' combination is legal for classes but illegal for methods in Java.
+
+* 'strictfp' method: If a method is declared as 'strictfp', all floating-point calculations in that method has to follow the 'IEEE 754' standard, so that we get platform independent results. The 'abstract' modifier never talks about implementation, whereas the 'strictfp' modifier always talks about implementation. Hence, 'abstract-strictfp' combination is illegal for methods in Java.
+
+
+
+Member (Methods & Variables) Level Modifiers:
+---------------------------------------------
+* 'public' member: If a member is declared as 'public', then we can access that member from anywhere, but the corresponding container class should be visible, i.e. before checking member's visibility we have to check the visibility of the container class.
+
+* 'default' member: If a member is declared as 'default', then we can access that member only within the current package, i.e. from outside of the package we can't access. Hence, the 'default' access is also known as 'package level access'.
+
+* 'private' member: If a member is declared as private, then we can access that member only within the corresponding container class, i.e. from outside of the class we can't access. The methods with the 'abstract' modifier should be available to the child classes to provide implementation, whereas methods with the 'private' modifier are not available to the child classes to provide implementation. Hence, 'private-abstract' combination is illegal for methods.
+
+* 'protected' members: If a member is declared as 'protected', then we can access that member anywhere in the current package, but only in the child classes outside of the current package. We can access 'protected' members within the current package anywhere either by using parent reference or by using child reference. But, we can access 'protected' members in outside package, only in child classes, and we should use child class reference only, i.e. parent class reference can't be used to access 'protected' members from outside of the current package. We can access 'protected' members from outside of the current package only in child classes, and we should use that specific child class's reference only.
+
+* The most restricted access modifier in Java is 'private'. The most accessible access modifier in Java is 'public'. The most recommended modifier in Java for any data member (variable) is 'private', but the most recommended modifier for methods is 'public'.
