@@ -157,6 +157,15 @@ Member (Methods & Variables) Level Modifiers:
 
 * 'private' member: If a member is declared as private, then we can access that member only within the corresponding container class, i.e. from outside of the class we can't access. The methods with the 'abstract' modifier should be available to the child classes to provide implementation, whereas methods with the 'private' modifier are not available to the child classes to provide implementation. Hence, 'private-abstract' combination is illegal for methods.
 
-* 'protected' members: If a member is declared as 'protected', then we can access that member anywhere in the current package, but only in the child classes outside of the current package. We can access 'protected' members within the current package anywhere either by using parent reference or by using child reference. But, we can access 'protected' members in outside package, only in child classes, and we should use child class reference only, i.e. parent class reference can't be used to access 'protected' members from outside of the current package. We can access 'protected' members from outside of the current package only in child classes, and we should use that specific child class's reference only.
+* 'protected' member: If a member is declared as 'protected', then we can access that member anywhere in the current package, but only in the child classes outside of the current package. We can access 'protected' members within the current package anywhere either by using parent reference or by using child reference. But, we can access 'protected' members in outside package, only in child classes, and we should use child class reference only, i.e. parent class reference can't be used to access 'protected' members from outside of the current package. We can access 'protected' members from outside of the current package only in child classes, and we should use that specific child class's reference only.
 
 * The most restricted access modifier in Java is 'private'. The most accessible access modifier in Java is 'public'. The most recommended modifier in Java for any data member (variable) is 'private', but the most recommended modifier for methods is 'public'.
+
+* 'final' variable:
+    - Final Instance Variable: If the value of a variable is varying from object to object, such type of variables are called 'instance' variables. For every object a separate copy of instance variables will be created. For 'instance' variables, we are not required to perform the initialization explicitly. JVM will always provide corresponding default values. But if an 'instance' variable is declared as 'final', then compulsory we have to perform the initialization explicitly, whether we are using that variable or not, and JVM won't provide any default value. For 'final' instance variables, compulsory we should perform the initialization before the completion of the corresponding constructor, i.e. the following are the various places for initialization,
+        1. At the time of declaration
+        2. Inside an instance block
+        3. Inside the constructor
+    These are the only possible places to perform initialization for 'final' instance variables. If we are trying to perform initialization anywhere else, then we will get compile-time error.
+
+    - Final Static Variable:
