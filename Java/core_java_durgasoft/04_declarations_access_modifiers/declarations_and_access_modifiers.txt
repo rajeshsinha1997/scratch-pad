@@ -202,3 +202,17 @@ For 'native' methods, implementation is already available in old languages (like
 * 'volatile' modifier: The 'volatile' modifier is applicable only for variables in Java, and we can't apply anywhere else. If the value of a variable keep on changing by multiple threads, then there maybe a chance of 'data-inconsistency' problem. We can solve this problem by using the 'volatile' modifier. If a variable is declared as 'volatile', then for every thread JVM will create a separate local copy, every modification performed by a thread will take place in the corresponding local copy belonging to that thread so that there is no effect on the remaining threads. The main advantage of the 'volatile' keyword is we can overcome the 'data-inconsistency' problem, but the main disadvantage of the 'volatile' keyword is, creating and maintaining a separate copy for every thread increases complexity of programming and creates performance problems. Hence, if there is no specific requirement, it is never recommended to use the 'volatile' keyword. Also, this keyword is almost deprecated in Java. A 'final' variable in Java signifies a variable whose value will never change, whereas the value of a 'volatile' variable keep on changing. Hence, 'volatile-final' is illegal combination for variables in Java.
 
 * The only applicable modifier for constructors are, 'public', 'final', 'protected' and 'default'.
+
+
+
+Interface:
+----------
+* Introduction: Below are some possible definitions of an interface,
+
+    - Any service-requirement specification (SRS) is considered as an interface. As example, JDBC API acts as a requirement specification to develop database drivers. Database vendor is responsible to implement the JDBC API. Also, Servlet API acts as a requirement specification to develop web-server. Web-Server vendor is responsible to implement the Servlet API.
+
+    - From client's point of view, an interface defines the set of services what he is expecting. From service provider's point of view, an interface defines the set of services what he is offering. Hence, any contract between the client and the service provider is considered as an interface. As example, through the Bank ATM's GUI screen, the bank people are highlighting the set of services what they are offering, at the same time the same GUI screen represents the set of services what customer is expecting. Hence, this GUI screen acts as a contract between the customer and bank people.
+
+    - Inside an interface every method is always abstract, whether we are declaring or not. Hence, interface is considered as a pure Abstract class.
+
+    - Summary Definition: Any service-requirement specification or any contract between client and service provider or a pure abstract class is nothing but an interface.
