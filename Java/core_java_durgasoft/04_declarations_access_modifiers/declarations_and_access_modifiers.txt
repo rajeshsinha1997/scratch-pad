@@ -216,3 +216,17 @@ Interface:
     - Inside an interface every method is always abstract, whether we are declaring or not. Hence, interface is considered as a pure Abstract class.
 
     - Summary Definition: Any service-requirement specification or any contract between client and service provider or a pure abstract class is nothing but an interface.
+
+* Interface Declaration and Implementation:
+    - Whenever we are implementing an interface, for each and every method present in that interface, we have to provide implementation. Otherwise, we have to declare the implementing class as 'abstract', then the next level child class is responsible to provide the implementation.
+
+    - Every method present in an interface is always 'public' and 'abstract' whether we are explicitly declaring or not, hence whenever are implementing an interface method, compulsory we should declare that method as 'public', otherwise we will get compile-time error.
+
+* 'extends' vs 'implements':
+    - A class can extend only one class at a time.
+    
+    - An interface can extend any number of interfaces simultaneously.
+
+    - A class can implement any number of interfaces simultaneously.
+
+    - A class can extend another class and can implement any number of interfaces simultaneously.
